@@ -1,0 +1,73 @@
+{
+  "name": "@retentioneering/front-utils",
+  "version": "2.0.0",
+  "description": "front-end that use the rete ecosystem",
+  "main": "./dist/rete-front-utils.cjs.js",
+  "jsnext:main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "umd:main": "./dist/rete-front-utils.umd.js",
+  "browser": "./dist/index.js",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE.md"
+  ],
+  "exports": {
+    "import": "./dist/index.js",
+    "require": "./dist/rete-front-utils.cjs.js"
+  },
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "emit-dts": "dts-bundle-generator --project tsconfig.declarations.json --out-file ./dist/index.d.ts ./src/index.ts",
+    "test": "jest",
+    "clear-jest": "jest --clearCache",
+    "test:watch": "jest --watchAll",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint \"./**/*.{js,ts,tsx}\"",
+    "lint:fix": "eslint \"./**/*.{js,ts,tsx}\" --fix",
+    "build": "npm run emit-dts && rollup -c rollup.config.js"
+  },
+  "author": "retentioneering",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/retentioneering/retentioneering-front-utils"
+  },
+  "bugs": {
+    "url": "https://github.com/retentioneering/retentioneering-front-utils/issues"
+  },
+  "homepage": "https://github.com/retentioneering/retentioneering-front-utils#readme",
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "@babel/preset-typescript": "^7.16.0",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-node-resolve": "^13.0.0",
+    "@rollup/plugin-typescript": "^8.3.0",
+    "@testing-library/dom": "^8.11.1",
+    "@testing-library/jest-dom": "^5.15.1",
+    "@types/jest": "^27.0.3",
+    "@types/zen-observable": "^0.8.3",
+    "@typescript-eslint/eslint-plugin": "^4.16.1",
+    "@typescript-eslint/parser": "^4.16.1",
+    "babel-jest": "^27.4.2",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "core-js": "^3.23.4",
+    "dts-bundle-generator": "^6.1.0",
+    "eslint": "^7.21.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.22.1",
+    "jest": "^27.4.2",
+    "rollup": "^2.52.2",
+    "rollup-plugin-sourcemaps": "^0.6.3",
+    "rollup-plugin-terser": "^7.0.2",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.2.2",
+    "wait-for-expect": "^3.0.2"
+  },
+  "dependencies": {
+    "@retentioneering/datalayer": "^2.0.0"
+  }
+}

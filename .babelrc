@@ -1,0 +1,32 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "useBuiltIns": "usage",
+        "corejs": 3,
+        "modules": false,
+        "targets": [
+          "> 1%",
+          "last 2 versions"
+        ]
+      }
+    ],
+    "@babel/typescript"
+  ],
+  "env": {
+    "test": {
+      "plugins": [
+        "@babel/plugin-transform-modules-commonjs",
+        [
+          "module-resolver",
+          {
+            "alias": {
+              "@": "./src"
+            }
+          }
+        ]
+      ]
+    }
+  }
+}

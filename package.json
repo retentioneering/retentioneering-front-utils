@@ -68,6 +68,7 @@
     "wait-for-expect": "^3.0.2"
   },
   "dependencies": {
-    "@retentioneering/datalayer": "^2.0.0"
+    "@retentioneering/datalayer": "^2.0.0",
+    "zen-observable": "^0.8.15"
   }
 }

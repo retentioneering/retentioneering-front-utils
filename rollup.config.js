@@ -8,6 +8,7 @@ import commonjs from '@rollup/plugin-commonjs'
 import pkg from './package.json'
 
 export default {
+  external: ['@retentioneering/datalayer', 'zen-observable'],
   input: './src/index.ts',
   output: [
     {
@@ -25,12 +26,20 @@ export default {
       format: 'umd',
       sourcemap: true,
       name: 'ReteFrontUtils',
+      globals: {
+        'zen-observable': 'Observable',
+        '@retentioneering/datalayer': 'ReteDatalayer',
+      },
     },
     {
       file: './dist/rete-front-utils.iife.js',
       format: 'iife',
       name: 'ReteFrontUtils',
       sourcemap: true,
+      globals: {
+        'zen-observable': 'Observable',
+        '@retentioneering/datalayer': 'ReteDatalayer',
+      },
     },
   ],
   plugins: [

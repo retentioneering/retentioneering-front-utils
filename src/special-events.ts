@@ -1,5 +1,4 @@
 import { getDatalayer } from '@retentioneering/datalayer'
-import Observable from 'zen-observable'
 import { CustomEvent } from './types'
 
 export const PERSIST_RETE_ID = 'persist_rete_id'
@@ -36,17 +35,7 @@ const createPersistIdStream = () => {
     .filter(isPersistIdEvent)
 }
 
-type EventObj<T extends CustomEvent = any> = {
-  filter: (event: CustomEvent) => event is T,
-  createStream: () => Observable<T>
-}
-
-type Events = {
-  persistId: EventObj<PersistReteIdEvent>
-}
-
-
-export const events: Events = {
+export const events = {
   persistId: {
     filter: isPersistIdEvent,
     createStream: createPersistIdStream,

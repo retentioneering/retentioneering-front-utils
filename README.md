@@ -2,8 +2,15 @@
 
 ## Install 
 
+install package & peer dependencies:
 ```
-npm install @retentioneering/front-utils
+npm install @retentioneering/front-utils @retentioneering/datalayer zen-observable
+```
+
+
+Also, if you are using typescript you should install types for zen-observable:
+```
+npm install @types/zen-observable --save-dev
 ```
 
 ## Usage
@@ -27,17 +34,3 @@ const subs = events
 ```ts
 subs.unsubscribe()
 ```
-
-### use datalayer
-
-This package already contains [@retentioneering/datalayer](https://www.npmjs.com/package/@retentioneering/datalayer). If you want to use datalayer, import it from @retentioneering/datalayer:
-
-```ts
-import { getDatalayer } from '@retentioneering/front-utils'
-
-const datalayer = getDatalayer()
-// do something
-datalayer.push(event)
-```
-
-For more details see the @retentioneering/datalayer [docs](https://www.npmjs.com/package/zen-observable).

@@ -6,5 +6,7 @@
  * You can obtain License text at https://github.com/retentioneering/retentioneering-dom-observer/blob/master/LICENSE.md
  */
 export type { CustomEvent } from './types'
-export { type PersistReteIdEvent, events } from './special-events'
-export { type ReteDatalayer, getDatalayer } from '@retentioneering/datalayer'
+export type { PersistReteIdEvent } from './special-events'
+export type { ReteDatalayer } from '@retentioneering/datalayer'
+export { events } from './special-events'
+export { getDatalayer } from '@retentioneering/datalayer'

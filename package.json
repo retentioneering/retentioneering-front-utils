@@ -1,6 +1,6 @@
 {
   "name": "@retentioneering/front-utils",
-  "version": "2.3.0",
+  "version": "2.4.0",
   "description": "front-end that use the rete ecosystem",
   "main": "./dist/rete-front-utils.cjs.js",
   "jsnext:main": "./dist/index.js",

@@ -4,13 +4,7 @@
 
 install package & peer dependencies:
 ```
-npm install @retentioneering/front-utils @retentioneering/datalayer zen-observable
-```
-
-
-Also, if you are using typescript you should install types for zen-observable:
-```
-npm install @types/zen-observable --save-dev
+npm install @retentioneering/front-utils @retentioneering/datalayer
 ```
 
 ## Usage

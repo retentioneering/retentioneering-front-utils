@@ -1,14 +1,14 @@
 {
   "compilerOptions": {
-    "target": "esnext",
-    "module": "es2015",
+    "target": "ESNext",
+    "module": "ES2015",
     "esModuleInterop": true,
     "isolatedModules": false,
-    "moduleResolution": "node",
+    "moduleResolution": "Node",
     "strict": true,
     "baseUrl": "./src",
     "paths": {
-      "@/*": [
+      "~/*": [
         "./*"
       ],
     }

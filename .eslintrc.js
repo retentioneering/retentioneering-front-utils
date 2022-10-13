@@ -33,6 +33,7 @@ module.exports = {
     'import/extensions': 0,
     'import/no-unresolved': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
   },
   plugins: ['@typescript-eslint', 'import'],
   extends: [

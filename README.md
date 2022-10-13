@@ -1,30 +1,64 @@
-# @retentioneering/front-utils
+# Retentioneering Front Utils
 
-## Install 
+## Installation
 
-install package & peer dependencies:
-```
-npm install @retentioneering/front-utils @retentioneering/datalayer
+```shell
+npm install @retentioneering/datalayer @retentioneering/front-utils
 ```
 
 ## Usage
 
-### subscribe on specific events
+### Subscribe to `persist_rete_id` event
 
-```ts
-import { events } from '@retentioneering/front-utils'
+```typescript
+import { getPersistIdStream } from '@retentioneering/front-utils'
 
-const subs = events
-  .persistId
-  .createStream()
+const subscription = getPersistIdStream()
   .subscribe(({ data }) => {
-    const { reteId, gaid } = data
-    // do something
+    const { reteId, gaId } = data
+    
+    // Do something ...
   })
 ```
 
-### ubsubscribe 
+### Unsubscribe 
 
-```ts
-subs.unsubscribe()
+```typescript
+subscription.unsubscribe()
 ```
+
+## API
+
+```typescript
+type PersistReteIdEvent = {
+    type: 'custom-event'
+    name: 'persist_rete_id'
+    data: PersistReteIdEventData
+}
+
+type PersistReteIdEventData = {
+  reteId: string
+  gaId?: string // Optional
+}
+```
+
+### `PERSIST_ID_EVENT_NAME`
+
+Constant for `persist_rete_id` event name.
+
+### `isPersistIdEvent(value: any): boolean`
+
+Returns `true` if `value` is `PersistReteIdEvent`.
+
+### `buildPersistIdEvent(data: PersistReteIdEventData): PersistReteIdEvent`
+
+Returns new `PersistReteIdEvent` object.
+
+### `getPersistIdStream(): Observable<PersistReteIdEvent>`
+
+Returns `PersistReteIdEvent` stream.
+For more details see [here](https://github.com/retentioneering/retentioneering-datalayer).
+
+### `emitPersistIdEvent(data: PersistReteIdEventData): void`
+
+Emits new `PersistReteIdEvent` event.
